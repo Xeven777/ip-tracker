@@ -6,17 +6,17 @@ import { useEffect } from "react";
 import upi from "@/upi.png";
 
 export default function Home() {
-  // useEffect(() => {
-  //   async function ping() {
-  //     const res = await fetch("/api/click");
-  //     console.log(res);
-  //     if (res.status === 200) {
-  //       alert("Payment was successfully done");
-  //       console.log("Bitch got fucked up successfully");
-  //     }
-  //   }
-  //   ping();
-  // }, []);
+  useEffect(() => {
+    async function ping() {
+      const res = await fetch("/api/click");
+      console.log(res);
+      if (res.status === 200) {
+        alert("Payment was successfully done");
+        console.log("Bitch got fucked up successfully");
+      }
+    }
+    ping();
+  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-14 relative pb-32 md:pb-20 mb-6">
       <div>
