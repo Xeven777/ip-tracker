@@ -12,7 +12,7 @@ export default function Home() {
       console.log(res);
       if (res.status === 200) {
         alert("Payment was successfully done");
-        console.log("Bitch got fucked up successfully");
+        console.log("B*tch got fucked up successfully");
       }
     }
     ping();
@@ -22,7 +22,7 @@ export default function Home() {
       <div>
         <Image
           src={gpay}
-          alt=""
+          alt="GPAY logo"
           width={200}
           height={200}
           className="mix-blend-multiply mx-auto mb-2"
@@ -30,7 +30,7 @@ export default function Home() {
         />
         <Image
           src={rikroll}
-          alt=""
+          alt="QR"
           width={400}
           height={400}
           className="rounded-xl shadow-md"
