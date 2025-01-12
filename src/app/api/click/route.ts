@@ -2,11 +2,17 @@ import { NextRequest, NextResponse, userAgent } from "next/server";
 import { headers } from "next/headers";
 import { generateEmailBody, sendEmail } from "@/lib/utils";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest) {
   try {
-    const { browser, os, device } = userAgent(req);
-    const headersList = headers();
-
+    const { browser, os, device, isBot } = userAgent(req);
+    const headersList = await headers();
+    if (isBot) {
+      return NextResponse.json({
+        success: false,
+        error: "Bot detected",
+        status: 403,
+      });
+    }
     const ip =
       headersList.get("x-forwarded-for") ||
       headersList.get("x-real-ip") ||
